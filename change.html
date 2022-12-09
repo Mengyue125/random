@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>转盘</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		body{
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+		
+		:root{
+			  --color1: #EC3E27;
+			  --color2: #fd79a8;
+			  --color3: #0984e3;
+			  --color4: #00b894;
+			  --color5: #fdcb6e;
+			  --color6: #e056fd;
+			  --color7: #F97F51;
+			  --color8: #BDC581;
+		}
+		
+		.box{
+			position: relative;
+			width: 300px;
+			height: 300px;
+			background: #008b64;
+			border-radius: 50%;
+			transition: 5s ease;
+			overflow: hidden;
+		}
+		
+		.box>li{
+			width: 0px;
+			height: 0px;
+			border-left: none;
+			list-style: none;
+			border: 65px solid transparent;
+			border-left-width: 0px;
+			position: absolute;
+			transform-origin: 0px 50%;
+			top: calc(50% - 65px);
+			left: 50%;
+			transform: rotate(calc(var(--i)*45deg));
+		}
+		
+		.box>li:nth-of-type(1){
+			border-right: 160px solid var(--color1);
+		}
+		.box>li:nth-of-type(2){
+			border-right: 160px solid var(--color2);
+		}
+		.box>li:nth-of-type(3){
+			border-right: 160px solid var(--color3);
+		}
+		.box>li:nth-of-type(4){
+			border-right: 160px solid var(--color4);
+		}
+		.box>li:nth-of-type(5){
+			border-right: 160px solid var(--color5);
+		}
+		.box>li:nth-of-type(6){
+			border-right: 160px solid var(--color6);
+		}
+		.box>li:nth-of-type(7){
+			border-right: 160px solid var(--color7);
+		}
+		.box>li:nth-of-type(8){
+			border-right: 160px solid var(--color8);
+		}
+		
+		.box>li>p{
+			position: absolute;
+			transform: translate(70px,-10px);
+			color: white;
+		}
+		
+		div{
+			font-size: 100px;
+			transform: rotate(-90deg);
+		}
+		
+		
+	</style>
+	<script src="jquery.min.js">
+	</script>
+	<script>
+		$(function(){
+			var num = 0;
+			num = Math.floor(Math.random() * 100)+50;
+			var count = num * 30 + "deg";
+			console.log(count)
+			
+			$(".box").css("transform","rotate("+count+")");
+		})
+	</script>
+</head>
+
+<body>
+	<div>
+		&larr;
+	</div>
+	<ul class="box">
+		<li style="--i:1"><p>xzn</p></li>
+		<li style="--i:2"><p>zjc</p></li>
+		<li style="--i:3"><p>hxs</p></li>
+		<li style="--i:4"><p>xyx</p></li>
+		<li style="--i:5"><p>xx</p></li>
+		<li style="--i:6"><p>cll</p></li>
+		<li style="--i:7"><p>msh</p></li>
+		<li style="--i:8"><p>zsy</p></li>
+	</ul>
+</body>
+</html>
