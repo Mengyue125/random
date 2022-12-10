@@ -34,7 +34,7 @@
 			height: 300px;
 			background: #008b64;
 			border-radius: 50%;
-			transition: 5s ease;
+			transition: 5s cubic-bezier(.11,2.01,.69,.49);
 			overflow: hidden;
 		}
 		
@@ -96,8 +96,8 @@
 		$(function(){
 			var num = 0;
 			num = Math.floor(Math.random() * 100)+50;
-			var count = num * 30 + "deg";
-			console.log(count)
+			du = Math.floor(Math.random() * 30)+10;
+			var count = num * du + "deg";
 			
 			$(".box").css("transform","rotate("+count+")");
 		})
